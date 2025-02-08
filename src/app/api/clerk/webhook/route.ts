@@ -1,29 +1,26 @@
-// import { type NextRequest } from "next/server";
+import { connectDB } from "@/lib/mongoDb";
+import User from "@/schema/user";
+import { type NextRequest } from "next/server";
 
-// export async function POST(req: NextRequest) {
-//   const { data }: any= await req.json();
+export async function POST(req: NextRequest) {
+  const { data }: any = await req.json();
 
-//   console.log("clerk webhook recieved", data);
+  await connectDB();
+  console.log("clerk webhook recieved", data);
 
-//   const firstName = data.first_name;
-//   const lastName = data.last_name;
-//   const imageUrl = data.image_url;
-//   const id = data.id;
-//   const emailAddress = data.email_addresses[0].email_address;
+  const firstName = data.first_name;
+  const lastName = data.last_name;
+  const imageUrl = data.image_url;
+  const id = data.id;
+  const emailAddress = data.email_addresses[0].email_address;
 
-//   await db.user.create({
-//     data: {
-//       firstName,
-//       lastName,
-//       imageUrl,
-//       emailAddress,
-//     },
-//   });
+  const newUser = new User({ firstName, lastName, imageUrl, emailAddress });
+  await newUser.save();
 
-//   return Response.json(
-//     {},
-//     {
-//       status: 200,
-//     }
-//   );
-// }
+  return Response.json(
+    {},
+    {
+      status: 200,
+    }
+  );
+}
