@@ -19,8 +19,10 @@ import {
     TreesIcon as Tree,
     User,
 } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { getUserByEmail } from "./actions"
 
 export default function FoodoBaggins() {
 
@@ -114,6 +116,22 @@ function ProfilePage() {
     ]
     const { isSignedIn, user, isLoaded } = useUser();
 
+    useEffect(() => {
+        async function fetchUserData() {
+            if (user?.primaryEmailAddress) {
+                const userData = await getUserByEmail(user.emailAddresses[0].emailAddress);
+                if (userData) {
+                    setHeight(userData.userHeight || 170);
+                    setWeight(userData.userWeight || 70);
+                    setGoal(userData.userGoal || "maintain");
+                }
+            }
+        }
+        fetchUserData();
+    }, [user]);
+
+
+
     if (!isLoaded) {
         return <div>Loading...</div>
     }
@@ -121,6 +139,7 @@ function ProfilePage() {
     if (!isSignedIn) {
         return <div>Sign in to view this page</div>
     }
+
 
 
     return (
@@ -134,10 +153,6 @@ function ProfilePage() {
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Name</label>
                             <Input value={user.fullName} disabled />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Age</label>
-                            <Input value="30" disabled />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Height (cm)</label>
@@ -288,6 +303,8 @@ function TrackerPage() {
         }
     }, [])
 
+    let router = useRouter();
+
     return (
         <div className="p-6 space-y-6 bg-white rounded-lg bg-opacity-90">
             <Card>
@@ -307,7 +324,7 @@ function TrackerPage() {
                                 </div>
                                 <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} accept="image/*" />
                             </label>
-                            <div className="flex justify-center mt-2">
+                            <div className="flex justify-center mt-2" onClick={router.push('/track-calories')}>
                                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Button onClick={showCamera ? takePhoto : startCamera}>
                                         <Camera className="w-4 h-4 mr-2" />
