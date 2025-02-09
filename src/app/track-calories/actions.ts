@@ -29,12 +29,13 @@ export async function estimateCalories(imageDataUrl: string) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "mistral",
+          model: "llava",
           messages: [
             {
               role: "user",
               content:
-                "How many calories, protein, fats and carbs are there in belgian waffle one. BE VERY CONSISE",
+                "Identify the food in image and give its calories, fat and protien in consise way",
+                images: [base64Image]
             },
             // { type: "image", image: base64Image },
           ],
