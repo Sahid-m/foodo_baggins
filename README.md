@@ -1,5 +1,7 @@
 # Foodo-Baggins
-![Foodo-Baggins Logo](images/logo.png)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a5dfa14-7082-461e-9113-44101020b447" alt="Foodo-Baggins Logo" width="300">
+</p>
 
  📌 Project Overview
 Foodo-Baggins is a fun, AI-powered nutrition tracker that does more than just count calories—it roasts you for your food choices, helps you make healthier decisions, and lets you contribute to sustainability by earning Green Points for eco-friendly actions!
@@ -21,22 +23,10 @@ Foodo-Baggins is a fun, AI-powered nutrition tracker that does more than just co
 6. Get Roasted (or Encouraged) by AI-generated tweets about your eating habits.
 7. Earn Green Points and spend them on sustainability actions via Verdn.
 
- 🚧 Challenges Faced
-- Ensuring humor in AI-generated tweets is fun, not offensive.
-- Seamless integration of Verdn API.
-- Making tracking effortless & engaging for users.
-
  🎉 Accomplishments
 - Successfully built a fun & interactive nutrition tracker.
 - Created AI-generated humorous feedback that makes tracking engaging.
 - Integrated real-world sustainability impact via Verdn.
 - Developed a social aspect where friends can comment on AI-generated tweets.
-
- 🔜 Future Plans
-- Voice command support for hands-free food logging.
-- Leaderboard & Challenges for friendly competition.
-- More sustainability rewards beyond tree planting.
-- Personalized workout & meal recommendations.
-
 ---
 🎉 *Foodo-Baggins: Track Your Meals, Get Roasted, Save the Planet!* 🌱🔥
