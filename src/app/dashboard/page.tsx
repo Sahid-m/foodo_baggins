@@ -324,7 +324,7 @@ function TrackerPage() {
                                 </div>
                                 <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} accept="image/*" />
                             </label>
-                            <div className="flex justify-center mt-2" onClick={router.push('/track-calories')}>
+                            <div className="flex justify-center mt-2" onClick={() => router.push('/track-calories')} >
                                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Button onClick={showCamera ? takePhoto : startCamera}>
                                         <Camera className="w-4 h-4 mr-2" />
@@ -465,7 +465,7 @@ function FeedPage() {
         </div>
     )
 }
-const VerdnButtonHandler = async (id: string,amount: number) => {
+const VerdnButtonHandler = async (id: string, amount: number) => {
     const response = await fetch(`http://localhost:3000/api/verdn?id=${id}&amount=${amount}`, {
         method: "POST"
     });
@@ -497,9 +497,9 @@ function SustainabilityPage() {
                             <Tree className="w-12 h-12 mb-4 text-green-600" />
                             <p className="mb-4">100 points = 1 tree planted</p>
                             <Button
-                             onClick={() => VerdnButtonHandler('io_01J4RSBX6KPQ4RYCRZ8C4QWRHF',1)}
-                             className="w-full">Plant a Tree (100 pts)
-                             </Button>
+                                onClick={() => VerdnButtonHandler('io_01J4RSBX6KPQ4RYCRZ8C4QWRHF', 1)}
+                                className="w-full">Plant a Tree (100 pts)
+                            </Button>
                         </CardContent>
                     </Card>
                     <Card>
@@ -510,9 +510,9 @@ function SustainabilityPage() {
                             <Droplet className="w-12 h-12 mb-4 text-blue-600" />
                             <p className="mb-4">200 points = 1kg plastic removed</p>
                             <Button
-                             onClick={() => VerdnButtonHandler('io_01J4RSBX6QX3K9HYX1Z67DSS1Y',1000)}
-                             className="w-full">Clean Ocean (200 pts)
-                             </Button>
+                                onClick={() => VerdnButtonHandler('io_01J4RSBX6QX3K9HYX1Z67DSS1Y', 1000)}
+                                className="w-full">Clean Ocean (200 pts)
+                            </Button>
                         </CardContent>
                     </Card>
                     <Card>
@@ -523,9 +523,9 @@ function SustainabilityPage() {
                             <Globe className="w-12 h-12 mb-4 text-purple-600" />
                             <p className="mb-4">500 points = Support a project</p>
                             <Button
-                             onClick={() => VerdnButtonHandler('io_01J4RSBX6F6CT7J4JZS14NVQWV',25)}
-                             className="w-full">Support Project (500 pts)
-                             </Button>
+                                onClick={() => VerdnButtonHandler('io_01J4RSBX6F6CT7J4JZS14NVQWV', 25)}
+                                className="w-full">Support Project (500 pts)
+                            </Button>
                         </CardContent>
                     </Card>
                 </div>
