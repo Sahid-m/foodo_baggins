@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Foodo-Baggins
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a5dfa14-7082-461e-9113-44101020b447" alt="Foodo-Baggins Logo" width="300">
+</p>
 
-## Getting Started
+ 📌 Project Overview
+Foodo-Baggins is a fun, AI-powered nutrition tracker that does more than just count calories—it roasts you for your food choices, helps you make healthier decisions, and lets you contribute to sustainability by earning Green Points for eco-friendly actions!
 
-First, run the development server:
+ 🎯 Features
+- AI-Powered Food Analysis: Upload food images, and AI will estimate calories & break down nutrients.
+- Personalized Profile: Set your fitness goal (Gain, Lose, Maintain) and track your progress.
+- Nutritional & Weight Tracker: Graphs displaying nutrient intake, weight trends, and calories.
+- AI Chat Advisor: Ask an AI about your diet, fitness, and get personalized suggestions.
+- Funny AI Feed: AI-generated tweets roasting or encouraging you based on your eating habits, visible to friends.
+- Sustainability Hub: Earn Green Points for staying on track & spend them on real-world actions (e.g., planting trees via Verdn).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ 💡 How It Works
+1. Sign Up/Login to create a personalized nutrition profile.
+2. Set Your Goals (Gain, Lose, Maintain) and input body stats.
+3. Upload Food Images, and AI will analyze calories & nutrients.
+4. Track Progress through interactive graphs.
+5. Chat with AI for diet advice and fitness suggestions.
+6. Get Roasted (or Encouraged) by AI-generated tweets about your eating habits.
+7. Earn Green Points and spend them on sustainability actions via Verdn.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ 🎉 Accomplishments
+- Successfully built a fun & interactive nutrition tracker.
+- Created AI-generated humorous feedback that makes tracking engaging.
+- Integrated real-world sustainability impact via Verdn.
+- Developed a social aspect where friends can comment on AI-generated tweets.
+---
+🎉 *Foodo-Baggins: Track Your Meals, Get Roasted, Save the Planet!* 🌱🔥
