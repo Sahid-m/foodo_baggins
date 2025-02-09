@@ -1,11 +1,17 @@
-"use client"
-
+"use client";
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
-
+  const router = useRouter(); 
+  const loginHandler = () => {
+    router.push('/sign-in');
+  };
+  const signUpHandler = () => {
+    router.push('/sign-up')
+  };
   useEffect(() => {
     const video = document.querySelector("video")
     if (video) {
@@ -68,7 +74,10 @@ export default function HomePage() {
             </svg>
             <span className="text-xl font-light tracking-wider">FOODO-BAGGINS</span>
           </div>
-          <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 transition-colors">
+          <Button 
+          onClick={loginHandler}
+          variant="outline" 
+          className="border-white/20 text-white hover:bg-white/10 transition-colors">
             Login
           </Button>
         </header>
@@ -81,6 +90,7 @@ export default function HomePage() {
               Sustainable food tracking powered by nature and AI.
             </p>
             <Button
+              onClick={signUpHandler}
               size="lg"
               className="bg-white/90 hover:bg-white text-[#1a2416] px-8 py-6 rounded-full text-lg transition-all hover:scale-105"
             >
