@@ -465,6 +465,12 @@ function FeedPage() {
         </div>
     )
 }
+const VerdnButtonHandler = async (id: string,amount: number) => {
+    const response = await fetch(`http://localhost:3000/api/verdn?id=${id}&amount=${amount}`, {
+        method: "POST"
+    });
+    return
+}
 
 function SustainabilityPage() {
     return (
@@ -490,7 +496,10 @@ function SustainabilityPage() {
                         <CardContent>
                             <Tree className="w-12 h-12 mb-4 text-green-600" />
                             <p className="mb-4">100 points = 1 tree planted</p>
-                            <Button className="w-full">Plant a Tree (100 pts)</Button>
+                            <Button
+                             onClick={() => VerdnButtonHandler('io_01J4RSBX6KPQ4RYCRZ8C4QWRHF',1)}
+                             className="w-full">Plant a Tree (100 pts)
+                             </Button>
                         </CardContent>
                     </Card>
                     <Card>
@@ -500,7 +509,10 @@ function SustainabilityPage() {
                         <CardContent>
                             <Droplet className="w-12 h-12 mb-4 text-blue-600" />
                             <p className="mb-4">200 points = 1kg plastic removed</p>
-                            <Button className="w-full">Clean Ocean (200 pts)</Button>
+                            <Button
+                             onClick={() => VerdnButtonHandler('io_01J4RSBX6QX3K9HYX1Z67DSS1Y',1000)}
+                             className="w-full">Clean Ocean (200 pts)
+                             </Button>
                         </CardContent>
                     </Card>
                     <Card>
@@ -510,7 +522,10 @@ function SustainabilityPage() {
                         <CardContent>
                             <Globe className="w-12 h-12 mb-4 text-purple-600" />
                             <p className="mb-4">500 points = Support a project</p>
-                            <Button className="w-full">Support Project (500 pts)</Button>
+                            <Button
+                             onClick={() => VerdnButtonHandler('io_01J4RSBX6F6CT7J4JZS14NVQWV',25)}
+                             className="w-full">Support Project (500 pts)
+                             </Button>
                         </CardContent>
                     </Card>
                 </div>
