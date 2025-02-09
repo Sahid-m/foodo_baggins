@@ -13,7 +13,7 @@ interface GoalStepProps {
 export default function GoalStep({ value, onChange, onSubmit, onPrev }: GoalStepProps) {
   return (
     <div className="flex flex-col h-[400px]">
-      <div className="flex-grow flex flex-col items-center justify-center space-y-6">
+      <div className="flex flex-col items-center justify-center flex-grow space-y-6">
         <Label className="text-2xl font-semibold text-center">What would you like to do?</Label>
         <RadioGroup value={value} onValueChange={onChange} className="space-y-3">
           <div className="flex items-center space-x-2">
@@ -41,7 +41,7 @@ export default function GoalStep({ value, onChange, onSubmit, onPrev }: GoalStep
           Previous
         </Button>
         <Button onClick={onSubmit} disabled={!value}>
-          Submit <ChevronRight className="ml-2 h-4 w-4" />
+          Submit <ChevronRight className="w-4 h-4 ml-2" />
         </Button>
       </div>
     </div>

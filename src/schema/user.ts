@@ -5,6 +5,12 @@ interface IUser extends Document {
   lastName: string;
   imgUrl: string;
   emailAddress: string;
+  userWeight?: string;
+  userHeight?: string;
+  userGender?: string;
+  userGoal?: string;
+  userDOB?: string;
+  userMaintainceCalories?: string;
 }
 
 const UserSchema: Schema = new Schema(
@@ -13,6 +19,12 @@ const UserSchema: Schema = new Schema(
     lastName: { type: String, required: true },
     imgUrl: { type: String, required: false },
     emailAddress: { type: String, required: true, unique: true },
+    userWeight: { type: String, required: false },
+    userHeight: { type: String, required: false },
+    userDOB: { type: String, required: false },
+    userGender: { type: String, required: false },
+    userGoal: { type: String, required: false },
+    userMaintainceCalories: { type: String, required: false },
   },
   {
     timestamps: true,

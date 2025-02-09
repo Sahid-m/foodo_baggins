@@ -14,7 +14,13 @@ export async function POST(req: NextRequest) {
   const id = data.id;
   const emailAddress = data.email_addresses[0].email_address;
 
-  const newUser = new User({ firstName, lastName, imageUrl, emailAddress });
+  const newUser = new User({
+    firstName,
+    id: id,
+    lastName,
+    imgUrl: imageUrl,
+    emailAddress,
+  });
   await newUser.save();
 
   return Response.json(

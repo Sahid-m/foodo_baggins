@@ -1,10 +1,5 @@
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from '@clerk/nextjs';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -23,7 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider signInFallbackRedirectUrl="/dashboard"
+      signUpFallbackRedirectUrl="/set-up">
       <html lang="en">
         <body className={inter.className}>{children}</body>
       </html>

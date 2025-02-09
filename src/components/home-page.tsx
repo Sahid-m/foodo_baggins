@@ -1,16 +1,16 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
-  const router = useRouter(); 
+  const router = useRouter();
   const loginHandler = () => {
-    router.push('/sign-in');
+    router.push('/sign-in?redirect=localhost:3000/set-up');
   };
   const signUpHandler = () => {
-    router.push('/sign-up')
+    router.push('/sign-up?redirect=localhost:3000/set-up')
   };
   useEffect(() => {
     const video = document.querySelector("video")
@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* Content Overlay */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Header */}
-        <header className="py-6 px-8 flex justify-between items-center backdrop-blur-sm bg-black/10">
+        <header className="flex items-center justify-between px-8 py-6 backdrop-blur-sm bg-black/10">
           <div className="flex items-center space-x-2">
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -74,19 +74,19 @@ export default function HomePage() {
             </svg>
             <span className="text-xl font-light tracking-wider">FOODO-BAGGINS</span>
           </div>
-          <Button 
-          onClick={loginHandler}
-          variant="outline" 
-          className="border-white/20 text-white hover:bg-white/10 transition-colors">
+          <Button
+            onClick={loginHandler}
+            variant="outline"
+            className="text-white transition-colors border-white/20 hover:bg-white/10">
             Login
           </Button>
         </header>
 
         {/* Main Content */}
-        <main className="flex-grow flex items-center justify-center px-8">
+        <main className="flex items-center justify-center flex-grow px-8">
           <div className="max-w-3xl text-center">
-            <h1 className="text-4xl md:text-6xl font-extralight mb-6 leading-tight">Nature Meets Nutrition</h1>
-            <p className="text-xl md:text-2xl font-light mb-10 text-white/80">
+            <h1 className="mb-6 text-4xl leading-tight md:text-6xl font-extralight">Nature Meets Nutrition</h1>
+            <p className="mb-10 text-xl font-light md:text-2xl text-white/80">
               Sustainable food tracking powered by nature and AI.
             </p>
             <Button
@@ -100,7 +100,7 @@ export default function HomePage() {
         </main>
 
         {/* Footer */}
-        <footer className="py-6 px-8 text-center text-sm text-white/60 backdrop-blur-sm bg-black/10">
+        <footer className="px-8 py-6 text-sm text-center text-white/60 backdrop-blur-sm bg-black/10">
           <p>&copy; 2025 Foodo-Baggins. Rooted in nature.</p>
         </footer>
       </div>
