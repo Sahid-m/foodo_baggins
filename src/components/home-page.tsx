@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { SignOutButton } from "@clerk/nextjs";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 
@@ -80,6 +81,7 @@ export default function HomePage() {
             className="text-white transition-colors border-white/20 hover:bg-white/10">
             Login
           </Button>
+          {/* <SignOutButton /> */}
         </header>
 
         {/* Main Content */}
